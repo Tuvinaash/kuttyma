@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 Days Together</title>
+    <link rel="icon" type="image/x-icon" href="heart">
+    <style>
+        /* General Styles */
+        body {
+            background-image: url('1.jpg'); /* Replace with a romantic background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Particle Animation */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('particles.gif') repeat; /* Replace with a particle animation GIF */
+            opacity: 0.5;
+            z-index: -1;
+            animation: moveParticles 10s linear infinite;
+        }
+
+        @keyframes moveParticles {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 1000px 1000px;
+            }
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 0, 102, 0.9);
+            padding: 20px;
+            text-align: center;
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.8);
+            animation: pulseGlow 2s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            from {
+                text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
+            }
+            to {
+                text-shadow: 3px 3px 20px rgba(255, 255, 255, 1);
+            }
+        }
+
+        /* Main Container */
+        .container {
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 20px auto;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Celebratory Text */
+        .celebrate {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffcc00;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Timer Styles */
+        .timer {
+            font-size: 2.2em;
+            color: #ffccff;
+            font-weight: bold;
+            margin: 20px 0;
+            animation: fadeInTimer 2s ease-in;
+        }
+
+        @keyframes fadeInTimer {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Message Text */
+        .message {
+            font-size: 1.5em;
+            margin: 20px 0;
+            line-height: 1.8;
+            color: #ffccff;
+        }
+
+        /* Photo and Video Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .gallery img,
+        .gallery video {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 5px solid transparent;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            animation: imageGlow 3s infinite alternate;
+        }
+
+        .gallery img:hover,
+        .gallery video:hover {
+            transform: scale(1.2);
+            border-color: #ffccff;
+            box-shadow: 0 5px 20px rgba(255, 255, 255, 0.9);
+        }
+
+        @keyframes imageGlow {
+            from {
+                border-color: #ff6b6b;
+            }
+            to {
+                border-color: #ffcc00;
+            }
+        }
+
+        /* Ripple Effect for Buttons */
+        .button {
+            position: relative;
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 20px 0;
+            background: linear-gradient(45deg, #ff6b6b, #ffcc00);
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            z-index: 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(255, 255, 255, 0.7);
+        }
+
+        .button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s, opacity 0.5s;
+            z-index: -1;
+        }
+
+        .button:hover::after {
+            width: 300px;
+            height: 300px;
+            opacity: 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(255, 0, 102, 0.8);
+            color: #fff;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="romantic-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Header -->
+    <header>
+        500 Days Together ❤️
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Timer Section -->
+        <p class="timer" id="timer">Loading timer...</p>
+
+        <p class="celebrate">🎉 Here's to 500 days of love, laughter, and joy! 🎉</p>
+        <p class="message">
+            My love KUTTYMA,<br>
+            These 500 days have been the most beautiful journey of my life. Thank you for being my partner, my best friend, and my everything. 
+            Here's to many more days of love, happiness, and creating unforgettable memories together! 💕
+        </p>
+
+        <!-- Photo and Video Gallery -->
+        <h2>Our Special Moments</h2>
+        <div class="gallery">
+            <img src="2.jpg" alt="Special Moment 1">
+            <img src="3.jpg" alt="Special Moment 2">
+            <img src="4.jpg" alt="Special Moment 3">
+        
+            <!-- Video for Special Moment 4 -->
+            <video controls>
+                <source src="v1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="v2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <video controls>
+                <source src="v3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Ending Message -->
+        <p class="message">
+            I love you more with each passing day. You make my world brighter and my heart fuller. <br>
+            Here's to forever, my love! ❤️
+        </p>
+
+        <!-- Button -->
+        <a href="https://youtu.be/_IuJsaMqtqc?si=kroTiW9mgBF4DTeb" class="button">Let's Celebrate Together</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Made with ❤️ by THOPPAIKUTTY for KUTTYMA
+    </footer>
+
+    <!-- JavaScript to Calculate Timer -->
+    <script>
+      // Replace with the actual date of the start of your relationship
+const startDate = new Date("2023-08-30T00:00:00Z"); // Example: Start date of the relationship in UTC (ISO 8601 format)
+
+// Adjust the start date to GMT+8 (by adding 8 hours)
+startDate.setHours(startDate.getHours() );
+
+function updateTimer() {
+    const currentDate = new Date();
+    
+    // Adjust current date to GMT+8
+    currentDate.setHours(currentDate.getHours() + 8);
+
+    const timeDifference = currentDate - startDate;
+
+    // Calculate the difference in days, hours, minutes, and seconds
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
+    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Hours
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60)); // Minutes
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000); // Seconds
+
+    // Display the result in the desired format
+    document.getElementById('timer').textContent = `We have been together for ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds!`;
+}
+
+// Update timer every second
+setInterval(updateTimer, 1000);
+
+// Initialize timer immediately
+updateTimer();
+    </script>
+</body>
+</html>
